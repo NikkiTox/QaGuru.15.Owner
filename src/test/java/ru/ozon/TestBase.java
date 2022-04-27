@@ -57,7 +57,8 @@ public class TestBase {
 
         if (Project.isRemoteWebDriver()) {
             capabilities.setCapability("enableVNC", true);
-           capabilities.setCapability("enableVideo", true);
+            capabilities.setCapability("enableVideo", true);
+            Configuration.remote = Project.webConfig.remoteUrl();
        }
 
        Configuration.browserCapabilities = capabilities;
