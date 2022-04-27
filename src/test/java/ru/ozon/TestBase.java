@@ -11,6 +11,7 @@ import ru.ozon.config.Project;
 import ru.ozon.helpers.Attach;
 
 
+
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.sleep;
 
@@ -20,7 +21,7 @@ public class TestBase {
     static void beforeAll() {;
         Configuration.baseUrl = System.getProperty("https://www.ozon.ru/");
         Configuration.browserSize = Project.browserSize();
-        Configuration.browser = Project.browserName();
+        Configuration.browser = Project.browserNameChose();
         Configuration.browserVersion = Project.browserVersion();
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -56,15 +57,12 @@ public class TestBase {
 
         if (Project.isRemoteWebDriver()) {
             capabilities.setCapability("enableVNC", true);
-            capabilities.setCapability("enableVideo", true);
-            Configuration.remote = Project.webConfig.remoteUrl();
-        }
+           capabilities.setCapability("enableVideo", true);
+       }
 
-        Configuration.browserCapabilities = capabilities;
+       Configuration.browserCapabilities = capabilities;
 
     }
-
-
 
     @AfterEach
     void addAttachments() {

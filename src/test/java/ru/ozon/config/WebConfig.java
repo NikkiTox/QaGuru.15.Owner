@@ -5,15 +5,15 @@ import org.aeonbits.owner.Config;
 @Config.Sources("classpath:${launch}.properties")
 public interface WebConfig extends Config {
 
-    @Key("browsername")
-    String browserName();
+    @Key("browserNameChose")
+    String browserNameChose();
 
-    @Key("browserversion")
+    @Key("browserVersion")
     String browserVersion();
 
-    @Key("browsersize")
+    @Key("browserSize")
     String browserSize();
 
-    @Key("remoteurl")
+    @Key("remoteUrl")
     String remoteUrl();
 }

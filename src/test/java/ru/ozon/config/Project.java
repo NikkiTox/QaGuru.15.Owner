@@ -5,11 +5,11 @@ public class Project {
     public static WebConfig webConfig = ConfigFactory.create(WebConfig.class, System.getProperties());
 
     public static boolean isRemoteWebDriver() {
-        return !webConfig.remoteUrl().equals("");
+        return webConfig.remoteUrl().equals("");
     }
 
-    public static String browserName() {
-        return webConfig.browserName();
+    public static String browserNameChose() {
+        return webConfig.browserNameChose();
     }
 
     public static String browserVersion() {
